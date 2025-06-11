@@ -1,0 +1,163 @@
+/* Import pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #111;
+    padding: 20px;
+    border: 4px solid #39ff14;
+    box-shadow: 0 0 10px #39ff14;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #39ff14;
+    margin-bottom: 30px;
+}
+
+.logo {
+    image-rendering: pixelated;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #39ff14;
+    font-size: 2.5em;
+    text-shadow: 3px 3px #ff00ff;
+    margin-bottom: 15px;
+}
+
+header p {
+    color: #00ffff;
+    font-size: 0.8em;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border: 2px solid #39ff14;
+}
+
+h2 {
+    color: #ff00ff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #39ff14;
+}
+
+/* Game list styles */
+.game-list ul {
+    list-style: none;
+}
+
+.game-list li {
+    margin: 15px 0;
+}
+
+.game-list a {
+    color: #00ffff;
+    text-decoration: none;
+    position: relative;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.game-list a:before {
+    content: "►";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.game-list a:hover {
+    color: #39ff14;
+    padding-left: 30px;
+}
+
+.game-list a:hover:before {
+    opacity: 1;
+}
+
+/* About section styles */
+.about p {
+    color: #fff;
+    font-size: 0.8em;
+    line-height: 1.8;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid #39ff14;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.6em;
+    color: #39ff14;
+}
+
+/* Animation for links */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}
+
+/* CRT screen effect */
+.container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        transparent 50%, 
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.15;
+}
